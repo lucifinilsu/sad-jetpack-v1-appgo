@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
 }
 
-apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion

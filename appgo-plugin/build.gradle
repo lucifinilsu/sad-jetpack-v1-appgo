@@ -29,22 +29,22 @@ dependencies {
 }*/
 
 // 本地发布
-publishing {
-    // 定义发布什么
-    publications {
-        plugin(MavenPublication) {
-            from components.java //使用默认的配置生成jar包
-            groupId = 'com.sad.jetpack.v1.appgo.plugin'
-            artifactId = 'appgo-plugin'
-            version = '0.0.1'
-        }
-    }
-    repositories {
-        maven {
-            // name = 'repo'
-            // url = layout.buildDirectory.dir("repo") // 发布到 router-gradle-plugin/build/repo
-            url = uri('../appgo-plugin-local-repo') // 发布到项目根目录
-        }
-    }
-}
+//publishing {
+//    // 定义发布什么
+//    publications {
+//        plugin(MavenPublication) {
+//            from components.java //使用默认的配置生成jar包
+//            groupId = 'com.sad.jetpack.v1.appgo.plugin'
+//            artifactId = 'appgo-plugin'
+//            version = '0.0.1'
+//        }
+//    }
+//    repositories {
+//        maven {
+//            // name = 'repo'
+//            // url = layout.buildDirectory.dir("repo") // 发布到 router-gradle-plugin/build/repo
+//            url = uri('../appgo-plugin-local-repo') // 发布到项目根目录
+//        }
+//    }
+//}
 
