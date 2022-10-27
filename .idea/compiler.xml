@@ -4,9 +4,6 @@
     <bytecodeTargetLevel target="1.8">
       <module name="sad-jetpack-v1-appgo.app" target="11" />
       <module name="sad-jetpack-v1-appgo.appgo-api" target="11" />
-      <module name="sad-jetpack-v1-appgo.appgo-plugin" target="11" />
-      <module name="sad-jetpack-v1-appgo.appgo-plugin.main" target="11" />
-      <module name="sad-jetpack-v1-appgo.appgo-plugin.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
