@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'org.apache.commons:commons-lang3:latest.release'
+    api 'org.apache.commons:commons-collections4:latest.release'
+    api rootProject.ext.dependencies["commons-io"]
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

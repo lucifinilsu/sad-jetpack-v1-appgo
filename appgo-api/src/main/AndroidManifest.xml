@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sad.jetpack.v1.appgo.api">
+    <application>
+        <!-- 全局Context提供者、无侵入式App初始化类 -->
+        <provider
+            android:name=".ApplicationContextInitializerProvider"
+            android:authorities="${applicationId}.com.sad.jetpack.v1.appgo.api.contextprovider"
+            android:multiprocess="true"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+</manifest>
