@@ -24,7 +24,7 @@ dependencies {
 gradlePlugin {
     plugins {
         standaloneGradlePlugins {
-            id = "appgo-plugin"
+            id = "com.github.lucifinilsu.sad-jetpack-v1-appgo"
             implementationClass = 'com.sad.jetpack.v1.appgo.plugin.AppGoAction'
         }
     }
