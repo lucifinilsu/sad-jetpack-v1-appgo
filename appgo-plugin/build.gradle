@@ -1,6 +1,6 @@
 plugins {
     id 'java-gradle-plugin'
-    id 'maven-publish'
+    //id 'maven-publish'
     id 'groovy'
 }
 java {
@@ -38,24 +38,24 @@ gradlePlugin {
     }
 }
 group 'com.sad.jetpack.v1.appgo.plugin'
-version '0.0.7'
+version '0.0.8'
 // 本地发布
-publishing {
-    // 定义发布什么
-    publications {
-        plugin(MavenPublication) {
-            from components.java //使用默认的配置生成jar包
-            groupId = 'com.sad.jetpack.v1.appgo.plugin'
-            artifactId = 'appgo-plugin'
-            version = '0.0.7'
-        }
-    }
-    repositories {
-        maven {
-            // name = 'repo'
-            // url = layout.buildDirectory.dir("repo") // 发布到 router-gradle-plugin/build/repo
-            url = uri('../appgo-plugin-local-repo') // 发布到项目根目录
-        }
-    }
-}
+//publishing {
+//    // 定义发布什么
+//    publications {
+//        plugin(MavenPublication) {
+//            from components.java //使用默认的配置生成jar包
+//            groupId = 'com.sad.jetpack.v1.appgo.plugin'
+//            artifactId = 'appgo-plugin'
+//            version = '0.0.8'
+//        }
+//    }
+//    repositories {
+//        maven {
+//            // name = 'repo'
+//            // url = layout.buildDirectory.dir("repo") // 发布到 router-gradle-plugin/build/repo
+//            url = uri('../appgo-plugin-local-repo') // 发布到项目根目录
+//        }
+//    }
+//}
 
