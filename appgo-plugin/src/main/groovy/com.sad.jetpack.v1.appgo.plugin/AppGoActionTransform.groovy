@@ -43,7 +43,7 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
                 //QualifiedContent.Scope.PROVIDED_ONLY
         )*/
         if (project.plugins.hasPlugin("com.android.application")) {
-            return Sets.immutableEnumSet(
+            return Set.immutableEnumSet(
                     QualifiedContent.Scope.PROJECT,
                     QualifiedContent.Scope.SUB_PROJECTS,
                     QualifiedContent.Scope.EXTERNAL_LIBRARIES)

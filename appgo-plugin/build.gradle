@@ -38,7 +38,7 @@ gradlePlugin {
     }
 }
 group 'com.sad.jetpack.v1.appgo.plugin'
-version '0.0.9'
+version '0.1.0'
 // 本地发布
 //publishing {
 //    // 定义发布什么
