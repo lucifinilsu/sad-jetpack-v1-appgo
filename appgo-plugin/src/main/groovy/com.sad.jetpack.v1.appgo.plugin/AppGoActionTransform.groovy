@@ -43,13 +43,17 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
                 //QualifiedContent.Scope.PROVIDED_ONLY
         )*/
         if (project.plugins.hasPlugin("com.android.application")) {
-            return Set.immutableEnumSet(
-                    QualifiedContent.Scope.PROJECT,
+            return Set.<QualifiedContent.Scope>of(QualifiedContent.Scope.PROJECT,
                     QualifiedContent.Scope.SUB_PROJECTS,
                     QualifiedContent.Scope.EXTERNAL_LIBRARIES)
+            /*return Set.immutableEnumSet(
+                    QualifiedContent.Scope.PROJECT,
+                    QualifiedContent.Scope.SUB_PROJECTS,
+                    QualifiedContent.Scope.EXTERNAL_LIBRARIES)*/
         } else if (project.plugins.hasPlugin("com.android.library") ||project.plugins.hasPlugin("java-library")) {
-            return Sets.immutableEnumSet(
-                    QualifiedContent.Scope.PROJECT)
+            return Set.of(QualifiedContent.Scope.PROJECT)
+            /*return Sets.immutableEnumSet(
+                    QualifiedContent.Scope.PROJECT)*/
         } else {
             return Collections.emptySet()
         }
