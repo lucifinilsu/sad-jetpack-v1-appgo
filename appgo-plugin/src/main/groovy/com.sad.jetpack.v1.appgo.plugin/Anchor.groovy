@@ -69,7 +69,7 @@ class Anchor {
 
     private static void appInitContext(Project project,StringBuilder defaultCode){
         StringBuffer initContextCode=new StringBuffer()
-        initContextCode.append("om.sad.jetpack.v1.appgo.api.AppGo.init(this);")
+        initContextCode.append("com.sad.jetpack.v1.appgo.api.AppGo.init(this);")
         defaultCode.append(initContextCode.toString())
     }
 
