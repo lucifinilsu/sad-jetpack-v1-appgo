@@ -101,7 +101,7 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
     boolean onScanned(ClassPool classPool, File scannedFile, File dest) {
 
         CtClass applicationParentClass = classPool.get("android.app.Application")
-        CtClass lifecyclesObserverInterface = classPool.get("com.sad.jetpack.architecture.appgo.api.IApplicationLifecyclesObserver")
+        CtClass lifecyclesObserverInterface = classPool.get("com.sad.jetpack.v1.appgo.api.IApplicationLifecyclesObserver")
 //        CtClass onCreatedPreInterface = classPool.get("com.sad.jetpack.architecture.appgo.api.IApplicationOnCreatePre")
 //        CtClass contentProviderClass = classPool.get("com.sad.jetpack.architecture.appgo.api.ApplicationContextInitializerProvider")
         classPool.importPackage("android.os")
