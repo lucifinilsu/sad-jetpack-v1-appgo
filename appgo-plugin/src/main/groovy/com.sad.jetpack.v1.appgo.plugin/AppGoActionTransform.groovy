@@ -4,6 +4,7 @@ import com.android.build.api.transform.QualifiedContent
 import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformException
 import com.android.build.api.transform.TransformInvocation
+import com.sad.jetpack.v1.appgo.annotation.ApplicationAccess
 import com.sad.jetpack.v1.appgo.annotation.ApplicationLifeCycleAction
 import com.sad.jetpack.v1.utils.ClassScanner
 import javassist.*
