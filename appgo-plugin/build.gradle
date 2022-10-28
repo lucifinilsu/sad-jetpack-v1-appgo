@@ -1,5 +1,5 @@
 plugins {
-    //id 'java-gradle-plugin'
+    id 'java-gradle-plugin'
     //id 'maven-publish'
     id 'groovy'
 }
@@ -21,16 +21,16 @@ dependencies {
     //api 'org.javassist:javassist:3.20.0-GA'
 
 }
-/*gradlePlugin {
+gradlePlugin {
     plugins {
         standaloneGradlePlugins {
-            id = "aaa"
+            id = "appgo-plugin"
             implementationClass = 'com.sad.jetpack.v1.appgo.plugin.AppGoAction'
-            version '0.0.1'
         }
     }
-}*/
-
+}
+group 'com.sad.jetpack.v1.appgo.plugin'
+version '0.0.5'
 // 本地发布
 //publishing {
 //    // 定义发布什么
