@@ -24,7 +24,7 @@ public class ApplicationLifecycleObserverMaster {
         return "";
     }*/
     private static String cacheCurrAppProccessName="";
-    public static boolean isLog=true;
+    public static boolean isLog=false;
     private static void logCaller(){
         log(Log.getStackTraceString(new Throwable()));
     }
