@@ -363,7 +363,7 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
                 else {
                     ps.append(fieldName+"."+anchorMethodName+"(this"+p+");")
                 }
-                ps.append("\n}\ncatch(java.lang.Exceptoin e){\ne.printStackTrace();\n}")
+                ps.append("\n}\ncatch(java.lang.Exception e){\ne.printStackTrace();\n}")
             }
         }
         anchorCode=ps.toString()
