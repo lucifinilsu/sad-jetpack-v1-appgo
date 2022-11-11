@@ -12,6 +12,7 @@ import org.gradle.api.Project
 
 class AppGoActionTransform extends Transform implements ClassScanner.OnFileScannedCallback, ClassScanner.ITarget{
     private Project project
+    private final static String BASIC_PACKAGE="com.sad.jetpack.v1.appgo";
 
     AppGoActionTransform(Project project){
         this.project=project
@@ -102,7 +103,7 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
     boolean onScanned(ClassPool classPool, File scannedFile, File dest) {
 
         CtClass applicationParentClass = classPool.get("android.app.Application")
-        CtClass lifecyclesObserverInterface = classPool.get("com.sad.jetpack.v1.appgo.api.IApplicationLifecyclesObserver")
+        CtClass lifecyclesObserverInterface = classPool.get(BASIC_PACKAGE+".api.IApplicationLifecyclesObserver")
 //        CtClass onCreatedPreInterface = classPool.get("com.sad.jetpack.architecture.appgo.api.IApplicationOnCreatePre")
 //        CtClass contentProviderClass = classPool.get("com.sad.jetpack.architecture.appgo.api.ApplicationContextInitializerProvider")
         classPool.importPackage("android.os")
@@ -341,6 +342,7 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
             createApplicationLifeCycleObserverField(observerClass,fieldName,scanResult.applicationClass)
             ApplicationLifeCycleAction action=anchorMethod.getAnnotation(ApplicationLifeCycleAction.class)
             if (action!=null){
+                ps.append("try{\n")
                 ps.append("if("+fieldName+"==null){"+fieldName+"="+"new "+observerClass.name+"()"+";}\n")
                 String[] processes=action.processName()
                 boolean hasIncludeProcess=(processes!=null && (processes.length>0));
@@ -355,12 +357,13 @@ class AppGoActionTransform extends Transform implements ClassScanner.OnFileScann
                     for (int i = 0; i < processes.length; i++) {
                         ps.append(pn+"["+i+"]="+"\""+processes[i]+"\";\n")
                     }
-                    ps.append("if (java.util.Arrays.asList("+pn+").contains(com.sad.jetpack.v1.appgo.api.ApplicationLifecycleObserverMaster.getCurrAppProcessName(this)))\n")
+                    ps.append("if (java.util.Arrays.asList("+pn+").contains("+BASIC_PACKAGE+".api.ApplicationLifecycleObserverMaster.getCurrAppProcessName(this)))\n")
                     ps.append("{"+fieldName+"."+anchorMethodName+"(this"+p+");}")
                 }
                 else {
                     ps.append(fieldName+"."+anchorMethodName+"(this"+p+");")
                 }
+                ps.append("\n}\ncatch(java.lang.Exceptoin e){\ne.printStackTrace();\n}")
             }
         }
         anchorCode=ps.toString()
