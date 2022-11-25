@@ -1,7 +1,7 @@
 ext {
     android = [
-            buildToolsVersion: "33.0.0",
-            compileSdkVersion: 33,
+            buildToolsVersion: "33.0.1",
+            compileSdkVersion: 32,
             minSdkVersion    : 21,
             targetSdkVersion : 33,
             abortOnLintError : false,
@@ -74,6 +74,9 @@ ext {
             "permission"                       : "com.yanzhenjie:permission:latest.release",
             "javapoet"                         : 'com.squareup:javapoet:latest.release',
             "commons-io"                       : 'commons-io:commons-io:2.8.0',
+            'commons-lang3'                    : 'org.apache.commons:commons-lang3:3.12.0',
+            'commons-collections4'             : 'org.apache.commons:commons-collections4:4.4',
+
 
             //self
             "self-demo-TestModule1"            : ":demo:TestModule1"

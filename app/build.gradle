@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdk rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
